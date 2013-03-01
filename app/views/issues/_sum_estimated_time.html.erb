@@ -1,0 +1,7 @@
+<div id="sum-estimated-times" style="display:inline-block;margin-left:50px">
+  <%= "#{l(:field_estimated_hours)}: <strong>#{number_with_precision(sum_estimated_times(@issues), :precision => 2)} #{l(:field_hours)}</strong>".html_safe if @issues %>
+</div>
+
+<%= javascript_tag do %>
+  document.querySelector('p.buttons').appendChild(document.getElementById('sum-estimated-times'));
+<% end %>
